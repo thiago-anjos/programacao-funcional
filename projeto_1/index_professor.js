@@ -5,7 +5,7 @@ const customPath = path.join(__dirname, "legendas");
 
 const files = fn
     .readDirectory(path, customPath)
-    .then((files) => fn.filesExtension(files, "srt"))
+    .then(fn.filesExtension(".srt"))
     .then((files) => fn.readFiles(files))
     .then((contents) => contents.join(""))
     .then((allContent) => allContent.split("\n"))

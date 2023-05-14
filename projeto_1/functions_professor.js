@@ -27,8 +27,11 @@ function readFiles(paths) {
     return Promise.all(paths.map((path) => readFile(path)));
 }
 
-function filesExtension(array, extension) {
-    return array.filter((file) => file.endsWith(extension));
+function filesExtension(extension) {
+    return (array) => {
+        const filtered = array.filter((file) => file.endsWith(extension));
+        return filtered;
+    };
 }
 
 function removeEmptyString(array) {
