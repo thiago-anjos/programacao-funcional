@@ -35,8 +35,11 @@ function removeEmptyString(array) {
     return array.filter((el) => el.trim());
 }
 
-function removeTimeOnLines(array, defaultText) {
-    return array.filter((el) => !el.includes(defaultText));
+function removeTimeOnLines(defaultText) {
+    // essa função é o retorno da função removeTimeOnLines
+    return function (array) {
+        return array.filter((el) => !el.includes(defaultText));
+    };
 }
 
 function removeLinesNumbers(array) {
