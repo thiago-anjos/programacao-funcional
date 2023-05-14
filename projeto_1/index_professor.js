@@ -10,6 +10,6 @@ const files = fn
     .then((contents) => contents.join(""))
     .then((allContent) => allContent.split("\n"))
     .then(fn.removeEmptyString)
-    .then((lines) => fn.removeTimeOnLines("-->")(lines))
+    .then(fn.removeTimeOnLines("-->"))
     .then(fn.removeLinesNumbers)
     .then((value) => console.log(value));
