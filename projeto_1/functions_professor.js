@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require('fs');
 
 function readDirectory(path, customPath) {
     return new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ function readDirectory(path, customPath) {
 function readFile(customPath) {
     return new Promise((resolve, reject) => {
         try {
-            const content = fs.readFileSync(customPath, { encoding: "utf8" });
+            const content = fs.readFileSync(customPath, { encoding: 'utf8' });
             resolve(content);
         } catch (error) {
             reject(error);
@@ -46,7 +46,11 @@ function removeTimeOnLines(defaultText) {
 
 function removeLinesNumbers(array) {
     const patternOnlyNumbers = /[0-9]/g;
-    return array.map((el) => el.replace(patternOnlyNumbers, ""));
+    return array.map((el) => el.replace(patternOnlyNumbers, ''));
+}
+
+function removeSymbols(array) {
+    return array.map((Element) => extractText(Element));
 }
 
 module.exports = {
@@ -57,4 +61,5 @@ module.exports = {
     removeEmptyString,
     removeTimeOnLines,
     removeLinesNumbers,
+    removeSymbols,
 };
