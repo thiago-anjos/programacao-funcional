@@ -1,23 +1,23 @@
-function composition(fn1, fn2) {
+function composition(...fns) {
     return function (value) {
-        return fn2(fn1(value));
+        return fns.reduce((acc, fn) => {
+            return fn(acc);
+        }, value);
     };
 }
 
-function fn1(value) {
-    if (!value) throw new Error('Invalid value passed');
-    console.log('estou na funcao 1');
-    return {
-        time: new Date(),
-        message: value.toUpperCase(),
-    };
+function screaming(text) {
+    return text.toUpperCase();
 }
 
-function fn2(fn) {
-    console.log('estou na funcao 2', fn);
-    fn.passed = true;
-    return fn;
+function emphasis(text) {
+    return `${text} !!!!`;
 }
 
-const result = composition(fn1, fn2)('Mensagem');
+function splitWords(text) {
+    return text.split('').join(' ');
+}
+
+const result = composition(screaming, emphasis, splitWords)('Super Hero');
+
 console.log(result);
