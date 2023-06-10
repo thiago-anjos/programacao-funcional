@@ -18,6 +18,9 @@ function splitWords(text) {
     return text.split('').join(' ');
 }
 
-const result = composition(screaming, emphasis, splitWords)('Super Hero');
+// vc pode salvar um tipo de composicao e depois passar o valor de forma tardia
+const exaggerated = composition(screaming, emphasis, splitWords);
+const normal = composition(emphasis);
 
-console.log(result);
+console.log(exaggerated('Super Hero'));
+console.log(normal('Super Hero'));
