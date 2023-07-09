@@ -1,18 +1,18 @@
 {
-  "name": "programacao_funcional",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^1.4.0",
-    "rxjs": "^7.8.1",
-    "rxjs-fetch": "^2.1.6",
-    "xmlhttprequest": "^1.8.0"
-  }
+    "name": "programacao_funcional",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "rxjs": "^7.8.1",
+        "rxjs-fetch": "^2.1.6",
+        "xmlhttprequest": "^1.8.0"
+    }
 }
